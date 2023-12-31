@@ -1,7 +1,7 @@
 # Ryan-Middleton.github.io
 Personal Portfolio Website
 
-Built using HTML and CSS
+Built using HTML, CSS and JavaScript
 
 Hosted on Github Pages
 
