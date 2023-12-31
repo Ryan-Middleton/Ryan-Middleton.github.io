@@ -1,21 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color: antiquewhite;">
+<html lang="en">
 
-    <head>
-        <title> Ryan Middleton Personal Portfolio</title>
-    </head>
+<head>
+<link rel="stylesheet" href="style.css">
+<title> Ryan Middleton Personal Portfolio</title>
+<script src="websiteFunctions.js">
+    
+</script>
+</head>
+
     <body>
-        <h1 style="background-color:palevioletred;text-align:center;border-style:solid;border-radius:5px">
-            Taleeya is really pretty
+        <h1>Ryan Middleton</h1>
 
+        <h3>Portfolio Website</h3>
 
-        </h1>
-        <p style="background-color:pink;text-align:center;">
-            and she got my cat this blanket!
-        </p>
-        <p style="background-color:pink;text-align:center;">
-            <img src="IMG_0453.JPEG" witdth ="400" height="400">
-        </p>
+        
+        <div class="tab">
+            <button class="links" onclick="openTab(event, 'Projects')" id="default">Projects</button>
+            <button class="links" onclick="openTab(event, 'Contacts/Links')">Contacts/Links</button>
+            <button class="links" onclick="openTab(event, 'About Me')">About Me</button>
+        </div>
 
+        <div id="Projects" class="content">
+            <h4>Personal Website:</h4>
+            <p>Built using HTML, CSS and JavaScript from scratch. Explore the website to see its features or check out the <a href="https://github.com/Ryan-Middleton/Ryan-Middleton.github.io">github</a>. WIP</p>
+            <img src="html_css_js.webp" style="width:500px;height:250;" >
+
+            <h5>Modelling Project</h5>
+            <p style="text-align:right;">Academic group project creating a complex logical formula, and having a SAT solver find a solution, using predicate and first order logic. Utilizing docker and python. Check out the <a href="https://github.com/Ryan-Middleton/Modelling-Project-Group-24">github</a>.</p>
+        </div>
+
+        <div id="Contacts/Links" class="content">
+
+            <p>Email: ryanmiddleton04@gmail.com</p>
+            <p>Github: <a href="https://github.com/Ryan-Middleton">https://github.com/Ryan-Middleton</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ryan-middleton-a72b3b298/">https://www.linkedin.com/in/ryan-middleton-a72b3b298/</a></p>
+
+        </div>
+
+        <div id="About Me" class="content">
+            <p>I'm a second year Computing student at Queen's Univertsity, in the Computing Mathematics and Analytics program. 
+                I'm looking to build practical and professional experience through working on personal projects and internships.</p>
+        </div>
+        <script>
+        document.getElementById("default").click()
+        </script>
     </body>
+
 </html>
