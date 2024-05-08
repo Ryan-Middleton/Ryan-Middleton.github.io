@@ -1,23 +1,4 @@
-/* Style the tab */
-.tabcontent {
-    display: none;
-}
 
-/* Style the buttons */
-.tablinks {
-    background-color: #f2f2f2;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
-}
-
-/* Change background color of active tab */
-.tablinks.active {
-    background-color: #ddd;
-}
-
-/*
 body{
     background-color: cornflowerblue;
 }
