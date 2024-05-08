@@ -1,6 +1,6 @@
 
 
-/*
+
 function openTab(evt, tabName){
 
     //Define variables
