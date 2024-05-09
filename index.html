@@ -3,6 +3,9 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <title> Ryan Middleton Personal Portfolio</title>
 <script src="websiteFunctions.js">
@@ -11,29 +14,29 @@
 </head>
 
     <body>
-        <h1>Ryan Middleton</h1>
+        <!-- HEADER -->
+        <section class="title">Ryan Middleton</section>
 
-        <h3>Portfolio Website</h3>
-
-        
-        <div class="tab">
+        <!-- BUTTONS -->
+        <section class="tab">
             <button class="links" onclick="openTab(event, 'Projects')" id="default">Projects</button>
             <button class="links" onclick="openTab(event, 'Contacts/Links')">Contacts/Links</button>
             <button class="links" onclick="openTab(event, 'About Me')">About Me</button>
-        </div>
+            <button class="links" onclick="openTab(event, 'Tic-Tac-Toe')">Tic-Tac-Toe</button>
+        </section>
 
+        <!-- PROJECTS -->
         <div id="Projects" class="content">
-            <h4>Personal Website:</h4>
-            <p>Built using HTML, CSS and JavaScript from scratch, deployed with github pages. Explore the website to see its features or check out the <a href="https://github.com/Ryan-Middleton/Ryan-Middleton.github.io">github</a>. WIP</p>
-            <img src="html_css_js.webp" style="width:500px;height:250;" >
+            <h style="text-align:left;">Personal Website:</h>
+            <p style="text-align:left;">Built using HTML, CSS and JavaScript from scratch, deployed with github pages. Explore the website to see its features or check out the <a href="https://github.com/Ryan-Middleton/Ryan-Middleton.github.io">github</a>. WIP</p>
+            
+            <img src="html_css_js.webp" style="width:300px;height:150;">
 
-            <h5>Modelling Project</h5>
+            <h style="text-align:right;margin-left: 250px;">Modelling Project:</h>
             <p style="text-align:right;">Academic group project creating a complex logical formula, and having a SAT solver find a solution, using predicate and first order logic. Utilizing docker and python. Check out the <a href="https://github.com/Ryan-Middleton/Modelling-Project-Group-24">github</a>.</p>
 
-            <h4>Calorie Tracker</h4>
-            <p>Calorie Tracker which takes user input and projects weight and BMI assuming a recommended calorie intake. Produces graphs showing change over time. Built using R. Check out the <a href="https://github.com/Ryan-Middleton/Calorie-Tracker/tree/main">github</a>.</p>
         </div>
-
+        <!-- CONTACTS -->
         <div id="Contacts/Links" class="content">
 
             <p>Email: ryanmiddleton04@gmail.com</p>
@@ -41,10 +44,33 @@
             <p>LinkedIn: <a href="https://www.linkedin.com/in/ryan-middleton-a72b3b298/">https://www.linkedin.com/in/ryan-middleton-a72b3b298/</a></p>
 
         </div>
-
+        <!-- ABOUT ME -->
         <div id="About Me" class="content">
             <p>I'm a second year Computing student at Queen's Univertsity, in the Computing Mathematics and Analytics program. 
                 I'm looking to build practical and professional experience through working on personal projects and internships.</p>
+        </div>
+
+        <!-- TIC TAC TOE GAME -->
+        <div id="Tic-Tac-Toe" class="content">
+            <p>Tic-Tac-Toe</p>
+            <section class = "game">
+                Player <span class = "display-player playerX">X</span>'s turn
+            </section>
+            <section class ="container">
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+                <div class ="tile"></div>
+            </section>
+            <section class ="display anncouncer hide"></section>
+            <section class ="controls">
+                <button id="reset">Reset</button>
+            </section>
         </div>
 
         <script>
