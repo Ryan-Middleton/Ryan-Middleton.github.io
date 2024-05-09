@@ -3,6 +3,14 @@
     font-family: "Georgia", Serif;
     background-color: cornflowerblue;
 }
+
+h{
+    font-size:45px;
+}
+p{
+    font-size:30px;
+}
+
 .content{
     border-top: 6px solid #333333;
     border-bottom: 6px solid #333333;
@@ -16,12 +24,8 @@
     text-decoration: underline;
     text-align: center;
 }
-h{
-    font-size:45px;
-}
-p{
-    font-size:30px;
-}
+
+
 
 .tab{
     margin: 0 auto;
