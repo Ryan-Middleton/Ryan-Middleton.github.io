@@ -28,10 +28,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
-    const start = ['','',''
+
+    let board = ['','',''
                 ,'','',''
                 ,'','',''];
-    let board = start;
     let currentPlayer = 'X';
     let isGameActive = true;
     
@@ -78,8 +78,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if(!board.includes('')){
             announce(TIE);
         }
+    }
 
-        const announce = (type) => {
+    const announce = (type) => {
         switch(type){
             case O_WON:
                 announcer.innerHTML = 'Player O Won';
@@ -92,7 +93,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         announcer.clasList.remove('hide');
     };
-    }
 
     if(!board.includes('')){
         resetBoard();
@@ -130,7 +130,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const resetBoard = () => {
-        board = start;
+        board = ['','',''
+                ,'','',''
+                ,'','',''];
         isGameActive = true;
         announcer.classList.add('hide');
 
