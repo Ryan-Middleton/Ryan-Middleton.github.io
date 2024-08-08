@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if(roundWon){
-            announce(currentPlayer === 'X' ? X_WON : O_WON)
+            announce(currentPlayer === 'X' ? X_WON : O_WON);
             isGameActive = false;
             return;
         }
@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if(!board.includes('')){
-        resetBoard
+        resetBoard();
     }
 
     const updateBoard = (index) => {
