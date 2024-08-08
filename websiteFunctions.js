@@ -30,15 +30,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const announcer = document.querySelector('.announcer');
     const start = ['','',''
                 ,'','',''
-                ,'','','']
-    let board = start
-    let currentPlayer = 'X'
+                ,'','',''];
+    let board = start;
+    let currentPlayer = 'X';
     let isGameActive = true;
     
 
-    const X_WON = 'X_WON'
-    const O_WON = 'O_WON'
-    const TIE = 'TIE'
+    const X_WON = 'X_WON';
+    const O_WON = 'O_WON';
+    const TIE = 'TIE';
 
     const wins = [
         [0, 1, 2],
@@ -49,21 +49,9 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 5, 8],
         [0, 4, 8],
         [6, 4, 2],
-    ]
+    ];
 
-    const announce = (type) => {
-        switch(type){
-            case O_WON:
-                announcer.innerHTML = 'Player O Won';
-                break;
-            case X_WON:
-                announcer.innerHTML = 'Player X Won';
-                break;
-            case TIE:
-                announcer.innerText = 'Tie';
-        }
-        announcer.clasList.remove('hide')
-    };
+    
 
     function handleResultValidation(){
         let roundWon = false;
@@ -90,6 +78,20 @@ window.addEventListener('DOMContentLoaded', () => {
         if(!board.includes('')){
             announce(TIE);
         }
+
+        const announce = (type) => {
+        switch(type){
+            case O_WON:
+                announcer.innerHTML = 'Player O Won';
+                break;
+            case X_WON:
+                announcer.innerHTML = 'Player X Won';
+                break;
+            case TIE:
+                announcer.innerText = 'Tie';
+        }
+        announcer.clasList.remove('hide');
+    };
     }
 
     if(!board.includes('')){
@@ -108,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     tiles.forEach( ( tile, index) => {
         tile.addEventListener('click', () => userAction(tile,index));
-    })
+    });
 
     const userAction = (tile, index) => {
         if(isValidAction(tile) && isGameActive){
