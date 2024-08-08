@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 ,'','',''
                 ,'','',''];
         isGameActive = true;
-        announcer.classList.add('hide');
+        //announcer.classList.add('hide');
 
         if(currentPlayer === 'O'){
             changePlayer();
