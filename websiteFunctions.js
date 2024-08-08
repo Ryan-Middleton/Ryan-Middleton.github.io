@@ -34,6 +34,11 @@ window.addEventListener('DOMContentLoaded', () => {
     let board = start
     let currentPlayer = 'X'
     let isGameActive = true;
+    
+
+    const X_WON = 'X_WON'
+    const O_WON = 'O_WON'
+    const TIE = 'TIE'
 
     const wins = [
         [0, 1, 2],
@@ -50,8 +55,10 @@ window.addEventListener('DOMContentLoaded', () => {
         switch(type){
             case O_WON:
                 announcer.innerHTML = 'Player </span class="playerY">O</span> Won';
+                break;
             case X_WON:
                 announcer.innerHTML = 'Player </span class="playerX">X</span> Won';
+                break;
             case TIE:
                 announcer.innerText = 'Tie';
         }
