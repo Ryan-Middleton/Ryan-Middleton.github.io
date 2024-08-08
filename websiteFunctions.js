@@ -49,11 +49,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const announce = (type) => {
         switch(type){
             case O_WON:
-                announcer.innerHTML = 'Player </span class="playerY">O</span> Won'
+                announcer.innerHTML = 'Player </span class="playerY">O</span> Won';
             case X_WON:
-                announcer.innerHTML = 'Player </span class="playerX">X</span> Won'
+                announcer.innerHTML = 'Player </span class="playerX">X</span> Won';
             case TIE:
-                announcer.innerText = 'Tie'
+                announcer.innerText = 'Tie';
         }
         announcer.clasList.remove('hide')
     };
@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if(roundWon){
-            announce(currentPlayer === 'X' ? O_WON : X_WON)
+            announce(currentPlayer === 'X' ? X_WON : O_WON)
             isGameActive = false;
             return;
         }
@@ -114,9 +114,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const changePlayer = () => {
-        playerDisplay.classList.remove('player${currentPlayer}')
+        playerDisplay.classList.remove('player${currentPlayer}');
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        playerDisplay.innerText = currentPlayer
+        playerDisplay.innerText = currentPlayer;
         playerDisplay.classList.add('player${currentPlayer}')
     }
 
