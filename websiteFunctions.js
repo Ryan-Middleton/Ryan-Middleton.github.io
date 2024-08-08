@@ -27,11 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
-    //const announcer = document.querySelector('.announcer');
-
-    let board = ['','',''
+    const announcer = document.querySelector('.announcer');
+    const start = ['','',''
                 ,'','',''
                 ,'','','']
+    let board = start
     let currentPlayer = 'X'
     let isGameActive = true;
 
@@ -46,6 +46,18 @@ window.addEventListener('DOMContentLoaded', () => {
         [6, 4, 2],
     ]
 
+    const announce = (type) => {
+        switch(type){
+            case O_WON:
+                announcer.innerHTML = 'Player </span class="playerY">O</span> Won'
+            case X_WON:
+                announcer.innerHTML = 'Player </span class="playerX">X</span> Won'
+            case TIE:
+                announcer.innerText = 'Tie'
+        }
+        announcer.clasList.remove('hide')
+    };
+
     function handleResultValidation(){
         let roundWon = false;
         for(let i = 0; i<=7; i++){
@@ -58,13 +70,18 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             if(a === b && b === c){
                 roundWon = true;
-                return;
+                break;
             }
         }
 
         if(roundWon){
+            announce(currentPlayer === 'X' ? O_WON : X_WON)
             isGameActive = false;
             return;
+        }
+
+        if(!board.includes('')){
+            announce(TIE);
         }
     }
 
