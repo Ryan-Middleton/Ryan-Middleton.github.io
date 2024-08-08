@@ -76,6 +76,14 @@ p{
     margin-top: 1em;
 }
 
+.display{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
 #reset{
     background-color: #7478db;
     color: black;

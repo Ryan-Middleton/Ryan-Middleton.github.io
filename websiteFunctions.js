@@ -49,13 +49,17 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
-    //const announcer = document.querySelector('.announcer');
+    const announcer = document.querySelector('.announcer');
 
     let board = ['','',''
                 ,'','',''
                 ,'','','']
     let currentPlayer = 'X'
     let isGameActive = true;
+
+    const X_WON = 'X_WON';
+    const O_WON = 'O_WON';
+    const TIE = 'TIE';
 
     const wins = [
         [0, 1, 2],
@@ -80,19 +84,35 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             if(a === b && b === c){
                 roundWon = true;
-                return;
+                break;
             }
         }
 
         if(roundWon){
             isGameActive = false;
+            announce(currentPlayer === 'X' ? X_WON : O_WON);
             return;
+        }
+
+        if(!board.includes('')){
+            announce(TIE);
         }
     }
 
-    if(!board.includes('')){
-        resetBoard
-    }
+    const announce = (type) => {
+        switch(type){
+            case O_WON:
+                announcer.innerHTML = 'Player O Won';
+                break;
+            case X_WON:
+                announcer.innerHTML = 'Player X Won';
+                break;
+            case TIE:
+                announcer.innerText = 'Tie';
+        }
+        announcer.classList.remove('hide');
+    };
+
 
     const updateBoard = (index) => {
         board[index] = currentPlayer;
@@ -119,16 +139,16 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const changePlayer = () => {
-        playerDisplay.classList.remove('player${currentPlayer}')
+        playerDisplay.classList.remove('player${currentPlayer}');
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        playerDisplay.innerText = currentPlayer
-        playerDisplay.classList.add('player${currentPlayer}')
+        playerDisplay.innerText = currentPlayer;
+        playerDisplay.classList.add('player${currentPlayer}');
     }
 
     const resetBoard = () => {
         board = ['','',''
                 ,'','',''
-                ,'','','']
+                ,'','',''];
         isGameActive = true;
 
         if(currentPlayer === 'O'){
