@@ -121,10 +121,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const resetBoard = () => {
-        board = ['','',''
-                ,'','',''
-                ,'','','']
+        board = start;
         isGameActive = true;
+        announcer.classList.add('hide');
 
         if(currentPlayer === 'O'){
             changePlayer();
